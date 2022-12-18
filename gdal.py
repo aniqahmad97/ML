@@ -5,7 +5,7 @@ import csv
 
 rast=[]
 head=['XCoord','YCoord']
-
+#search for all the rasters with tif extension
 for i in os.listdir(r"D:\Test"):
     filename,fileext=os.path.splitext(i)
     if fileext=='.tif':
@@ -18,6 +18,8 @@ with open("output.csv", "w",newline='') as fp:
        wr.writerow(head)
         
 print(head)
+
+# Open the shapefile
 foldpath=r"D:\Test"  
 ds=ogr.Open(r'D:\Documents\free lancing assigment\dem visualization\test\data.shp')
 lyr=ds.GetLayer()
